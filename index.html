@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home</title>
+    <title>Activity Discovery</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
+    <link rel="icon" type="image/x-icon" href="/image/favicon.PNG">
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
   </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
+  <body id="loginbody">
+    
+    <!---a href="/page2.html">Other page<--->
+    
+    <main id="loginmain">
+      <div class="container-lg">
+        <img src="image/loginlogo.PNG" alt="logo">
+        <h1>Activity Discovery Login </h1>
+
+        <form action="">
+          <div class="form-floating mb-3">
+            
+            <input type="text" class="form-control" id="floatingInput" placeholder="User Name">
+            <label for="floatingInput">User name</label>
+          </div>
+          <div class="form-floating">
+            
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="form-floating  mb-3" id="reconfirmpw" style="display: none;">
+            
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" >
+            <label for="confirmPassword">Confirm Password</label>
+          </div>
+          <div>
+            <p id="firstmessage" style="display: block;">New account user? <a class="link-opacity-10-hover" href="#" onclick=showConfirmPassword()>Click</a> here to sign up</p>
+            <p id="secondmessage" style="display: none;"></p>
+
+          </div>
+
+          <button type="button" class="btn btn-success" onclick=signup() id="signupbutton" style="display: none;">Sign up</button>
+          <button type="button" class="btn btn-success" onclick=login() id="loginbutton" style="display: block;">Login</button>
+
+        </form>
+
+      </div>
+      
+
     </main>
+    <script type="module" src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>

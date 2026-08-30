@@ -1,46 +1,74 @@
-* {
-  box-sizing: border-box;
-}
 
-body {
+
+html, body {
   margin: 0;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+  height: 100vh;
+
+  background-image: url('image/bg.PNG');
+  background-size: cover;       /* cover whole area */
+  background-position: center;  /* center the image */
+  background-repeat: no-repeat; /* don’t tile */
+  
   font-family: system-ui, sans-serif;
   color: black;
-  background-color: white;
+  
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  gap: 0.5rem;
-  border-bottom: solid 1px #aaa;
-  background-color: #eee;
-}
-
-nav a {
-  display: inline-block;
-  min-width: 9rem;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  border: solid 1px #aaa;
-  text-align: center;
-  text-decoration: none;
-  color: #555;
-}
-
-nav a[aria-current='page'] {
-  color: #000;
-  background-color: #d4d4d4;
-}
 
 main {
-  padding: 1rem;
+  padding: auto;
+  height: 100vh;
+  
+  background: transparent;
+  justify-content: center;
+  align-items: center;
 }
 
+#loginmain{
+  background-color: rgb(231, 194, 243);
+}
+#loginbody{
+  background-color: rgb(231, 194, 243);
+}
+#homepagemain{
+  background: transparent
+}
+
+.container-lg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* horizontal */
+  align-items: center;
+  height: 100vh; 
+  background-color: transparent;
+}
+img{
+  margin: 20px;
+}
 h1 {
+  margin: 20px;
   font-weight: bold;
   font-size: 1.5rem;
+}
+#title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+#lightbulb{
+  margin: 5px;
+}
+#titlemessage{
+  margin-bottom: 0px;
+}
+#top{
+  display: flex;
+  flex-direction: row;
+  gap: 500px;
+  
 }
