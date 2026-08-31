@@ -1,74 +1,107 @@
+* {
+  box-sizing: border-box;
+}
 
-
-html, body {
+html,
+body {
   margin: 0;
   display: flex;
-  justify-content: center; /* horizontal */
-  align-items: center;     /* vertical */
+  justify-content: center;
+  /* horizontal */
+  align-items: center;
+  /* vertical */
   height: 100vh;
 
   background-image: url('image/bg.PNG');
-  background-size: cover;       /* cover whole area */
-  background-position: center;  /* center the image */
-  background-repeat: no-repeat; /* don’t tile */
-  
+  background-size: cover;
+  /* cover whole area */
+  background-position: center;
+  /* center the image */
+  background-repeat: no-repeat;
+  /* don’t tile */
+
   font-family: system-ui, sans-serif;
   color: black;
-  
+
 }
 
 
 main {
-  padding: auto;
   height: 100vh;
-  
   background: transparent;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#loginmain{
+#loginmain {
   background-color: rgb(231, 194, 243);
 }
-#loginbody{
+
+#loginbody {
   background-color: rgb(231, 194, 243);
 }
-#homepagemain{
+
+#homepagemain {
   background: transparent
 }
 
-.container-lg{
+.container-lg {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* horizontal */
+  justify-content: center;
+  /* horizontal */
   align-items: center;
-  height: 100vh; 
+  height: 100vh;
   background-color: transparent;
 }
-img{
+
+img {
   margin: 20px;
 }
+
 h1 {
   margin: 20px;
   font-weight: bold;
   font-size: 1.5rem;
 }
-#title{
+
+#title {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: 30px;
 }
-#lightbulb{
+
+#lightbulb {
   margin: 5px;
 }
-#titlemessage{
+
+#titlemessage {
   margin-bottom: 0px;
 }
-#top{
+
+#top {
   display: flex;
   flex-direction: row;
   gap: 500px;
-  
+
+}
+
+.card_img_top {
+  margin: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* remove height or set max-width */
+  max-width: 300px;
+  background-color: transparent;
+}
+
+#rowbutton {
+  display: flex;
+  flex-direction: row;
 }
