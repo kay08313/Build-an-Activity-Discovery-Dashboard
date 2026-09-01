@@ -1,5 +1,5 @@
 
-import getwebdata from "./script.js"
+//import getwebdata from "./script.js"
 
 function get_web_info() {
 

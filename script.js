@@ -86,7 +86,7 @@ function saveName() {
     localStorage.setItem("username", floatingInput.value);
 }
 
-export default getwebdata;
+//export default getwebdata;
 
 window.showConfirmPassword = showConfirmPassword
 window.signup = signup
