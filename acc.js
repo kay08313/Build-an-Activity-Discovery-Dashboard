@@ -1,7 +1,10 @@
 
+import getwebdata from "./script.js"
+
 function get_web_info() {
 
     const generatestuff = document.getElementById("generatestuff")
+    const titlemessage = document.getElementById("titlemessage")
     const offcanvas_body = document.getElementsByClassName("offcanvas_body")
     const card_img_top = document.getElementsByClassName("card_img_top")[0]
     const card_title = document.getElementsByClassName("card_title")[0]
@@ -10,7 +13,8 @@ function get_web_info() {
     const saveactivity = document.getElementById("saveactivity")
     const alert_danger = document.getElementById("alert_danger")
     const card = document.getElementsByClassName("card")[0]
-    return { generatestuff, offcanvas_body, card_img_top, card_title, card_text, listgroup_listgroupflush, saveactivity, alert_danger, card }
+    const btn_group_vertical = document.getElementsByClassName("btn-group-vertical")[0]
+    return { generatestuff, titlemessage, offcanvas_body, card_img_top, card_title, card_text, listgroup_listgroupflush, saveactivity, alert_danger, card, btn_group_vertical }
 }
 /// here get api data
 
@@ -78,12 +82,46 @@ async function generate() {
     element.listgroup_listgroupflush.appendChild(price)
 }
 
-function save_activity() {
+async function save_activity() {
     const element = get_web_info()
 
-    const apidata = await data()
+    ///const apidata = await data()
+
+    const rowbutton = document.createElement("div")
+    rowbutton.className = "rowbutton"
+
+    const btn_check = document.createElement("input")
+    btn_check.type = "checkbox"
+    btn_check.autocomplete = "off"
+
+    const label = document.createElement("label")
+    label.className = "btn"
+    label.textContent = "Checkbox"
+
+    const message = document.createElement("p")
+    message.className = "activity name"
+    message.textContent = element.card_title.textContent
+    //console.log(element.card_title.textContent)
+    //console.log(message.textContent)
+
+    element.btn_group_vertical.appendChild(rowbutton)
+    rowbutton.appendChild(btn_check)
+    rowbutton.appendChild(label)
+    rowbutton.appendChild(message)
 
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+    const name = localStorage.getItem("username");
+    if (name) {
+        // Output the username :
+        get_web_info()
+        //const display = document.getElementById("titlemessage");
+        titlemessage.textContent = `Welcome, ${name}!`;
+    }
+});
+
+
 
 window.get_web_info = get_web_info
 
@@ -92,5 +130,6 @@ window.data = data
 window.initialize = initialize
 window.generate = generate
 window.save_activity = save_activity
+//window.greeting = greeting
 
 

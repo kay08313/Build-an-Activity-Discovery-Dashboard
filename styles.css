@@ -10,7 +10,8 @@ body {
   /* horizontal */
   align-items: center;
   /* vertical */
-  height: 100vh;
+  height: 130vh;
+  width: 100vw;
 
   background-image: url('image/bg.PNG');
   background-size: cover;
@@ -27,12 +28,14 @@ body {
 
 
 main {
-  height: 100vh;
+  height: 130vh;
+  width: 100vw;
   background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 #loginmain {
@@ -44,7 +47,10 @@ main {
 }
 
 #homepagemain {
-  background: transparent
+  background: transparent;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
 }
 
 .container-lg {
@@ -81,12 +87,18 @@ h1 {
 
 #titlemessage {
   margin-bottom: 0px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 50px;
 }
 
 #top {
   display: flex;
   flex-direction: row;
-  gap: 500px;
+  justify-content: flex-end;
+  /* aligns content to the right */
+  padding-left: 360px;
+
+  gap: 300px;
 
 }
 
@@ -104,4 +116,13 @@ h1 {
 #rowbutton {
   display: flex;
   flex-direction: row;
+}
+
+#savehistory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+
 }

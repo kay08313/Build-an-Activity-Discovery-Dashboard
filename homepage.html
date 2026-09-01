@@ -17,8 +17,8 @@
   <main>
     <div id="top">
       <div id="title">
-        <img src="image/lightbulb.PNG" alt="lightbulb" width="32" height="32" id="lightbulb">
-        <p id="titlemessage">Activity</p>
+        <img src="image/lightbulb.PNG" alt="lightbulb" width="300" height="300" id="lightbulb">
+
       </div>
       <div id="savehistory">
         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -31,17 +31,7 @@
           </div>
           <div class="offcanvas_body">
             <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-              <div id="rowbutton">
-                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
-                <p>hi</p>
-              </div>
 
-              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
-
-              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
             </div>
           </div>
         </div>
@@ -53,6 +43,8 @@
       <div class="alert alert-danger" role="alert" style="display: none;" id="alert_danger">
         your api address has something wrong!
       </div>
+
+      <p id="titlemessage"></p>
 
       <button type="button" class="btn btn-success" onclick=generate() id="generatestuff" style="display: block;">Random
         Activity Generator</button>
