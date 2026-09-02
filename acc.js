@@ -16,10 +16,11 @@ function get_web_info() {
     const btn_group_vertical = document.getElementsByClassName("btn-group-vertical")[0]
     return { generatestuff, titlemessage, offcanvas_body, card_img_top, card_title, card_text, listgroup_listgroupflush, saveactivity, alert_danger, card, btn_group_vertical }
 }
+const element = get_web_info()
 /// here get api data
 
 async function fetchdata(url) {
-    const element = get_web_info()
+
     try {
         const res = await fetch(url)
         return await res.json();
@@ -46,7 +47,7 @@ async function data() {
 //data()
 
 function initialize() {
-    const element = get_web_info()
+
     element.card_img_top.src = ""
     element.card_title.textContent = ""
     element.card_text.textContent = ""
@@ -55,7 +56,7 @@ function initialize() {
 }
 
 async function generate() {
-    const element = get_web_info()
+
     element.card.style.display = "block"
     const apidata = await data()
 
@@ -82,33 +83,44 @@ async function generate() {
     element.listgroup_listgroupflush.appendChild(price)
 }
 
+let duplicate = []
 async function save_activity() {
-    const element = get_web_info()
+
+
+    console.log(element.card_title.textContent)
 
     ///const apidata = await data()
+    if (duplicate.includes(element.card_title.textContent) === true) {
 
-    const rowbutton = document.createElement("div")
-    rowbutton.className = "rowbutton"
+        console.log("your already add this activity")
+        alert("your already add this activity")
 
-    const btn_check = document.createElement("input")
-    btn_check.type = "checkbox"
-    btn_check.autocomplete = "off"
+    } else {
+        const rowbutton = document.createElement("div")
+        rowbutton.className = "rowbutton"
 
-    const label = document.createElement("label")
-    label.className = "btn"
-    label.textContent = "Checkbox"
+        const btn_check = document.createElement("input")
+        btn_check.type = "checkbox"
+        btn_check.autocomplete = "off"
 
-    const message = document.createElement("p")
-    message.className = "activity name"
-    message.textContent = element.card_title.textContent
-    //console.log(element.card_title.textContent)
-    //console.log(message.textContent)
+        const label = document.createElement("label")
+        label.className = "btn"
+        //label.textContent = "Checkbox"
 
-    element.btn_group_vertical.appendChild(rowbutton)
-    rowbutton.appendChild(btn_check)
-    rowbutton.appendChild(label)
-    rowbutton.appendChild(message)
+        const message = document.createElement("p")
+        message.className = "activity name"
+        message.textContent = element.card_title.textContent
+        //console.log(element.card_title.textContent)
+        //console.log(message.textContent)
 
+        element.btn_group_vertical.appendChild(rowbutton)
+        rowbutton.appendChild(btn_check)
+        rowbutton.appendChild(label)
+        rowbutton.appendChild(message)
+
+        duplicate.push(element.card_title.textContent)
+
+    }
 }
 
 window.addEventListener("DOMContentLoaded", () => {

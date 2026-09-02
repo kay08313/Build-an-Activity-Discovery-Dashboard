@@ -2,6 +2,19 @@
 
 const user = [{ user_name: "kay", password: "asdf" },]
 
+function getwebdata() {
+    const reconfirmpw = document.getElementById("reconfirmpw")
+    const firstmessage = document.getElementById("firstmessage")
+    const secondmessage = document.getElementById("secondmessage")
+    const signupbutton = document.getElementById("signupbutton")
+    const floatingInput = document.getElementById("floatingInput")
+    const floatingPassword = document.getElementById("floatingPassword")
+    const confirmPassword = document.getElementById("confirmPassword")
+    const loginbutton = document.getElementById("loginbutton")
+    const dontwantsignup = document.getElementById("dontwantsignup")
+    return { reconfirmpw, firstmessage, secondmessage, signupbutton, floatingInput, floatingPassword, confirmPassword, loginbutton, dontwantsignup }
+}
+
 function showConfirmPassword() {
     getwebdata()
     secondmessage.innerText = ""
@@ -13,6 +26,8 @@ function showConfirmPassword() {
     secondmessage.style.display = "block"
     signupbutton.style.display = "block"
     loginbutton.style.display = "none"
+    dontwantsignup.style.display = "block"
+
 }
 
 function signup() {
@@ -29,6 +44,7 @@ function signup() {
             signupbutton.style.display = "none"
             loginbutton.style.display = "block"
             reconfirmpw.style.display = "none"
+            dontwantsignup.display = "none"
             floatingInput.value = ""
             floatingPassword.value = ""
 
@@ -70,20 +86,22 @@ function login() {
 }
 
 
-function getwebdata() {
-    const reconfirmpw = document.getElementById("reconfirmpw")
-    const firstmessage = document.getElementById("firstmessage")
-    const secondmessage = document.getElementById("secondmessage")
-    const signupbutton = document.getElementById("signupbutton")
-    const floatingInput = document.getElementById("floatingInput")
-    const floatingPassword = document.getElementById("floatingPassword")
-    const confirmPassword = document.getElementById("confirmPassword")
-    const loginbutton = document.getElementById("loginbutton")
-    return { reconfirmpw, firstmessage, secondmessage, signupbutton, floatingInput, floatingPassword, confirmPassword, loginbutton }
-}
 
 function saveName() {
     localStorage.setItem("username", floatingInput.value);
+}
+
+function gobacklogin() {
+    getwebdata()
+    firstmessage.style.display = "block"
+    signupbutton.style.display = "none"
+    loginbutton.style.display = "block"
+    reconfirmpw.style.display = "none"
+    dontwantsignup.style.display = "none"
+    floatingInput.value = ""
+    floatingPassword.value = ""
+
+
 }
 
 //export default getwebdata;
@@ -92,3 +110,4 @@ window.showConfirmPassword = showConfirmPassword
 window.signup = signup
 window.getwebdata = getwebdata
 window.login = login
+window.gobacklogin = gobacklogin
